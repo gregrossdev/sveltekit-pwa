@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-family: 'Nunito', sans-serif;
+}
+
+/* 
+	+++++++++++++++++++++++++++++
+	===== CSS COLOR SETTINGS =====
+	+++++++++++++++++++++++++++++
+*/
+
+:root {
+	--bg-body: 240, 240, 240;
+	--color: 20, 20, 20;
+	--box-shadow-color: 60, 60, 60;
+	--separator-color: 0, 0, 0;
+	--primary-color: 189, 44, 212;
+	--yellow-color: 255, 214, 3;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-body: 20, 20, 20;
+		--color: 240, 240, 240;
+		--box-shadow-color: 60, 60, 60;
+		--separator-color: 230, 230, 230;
+	}
+}
+/* 
+	+++++++++++++++++++++++++++++++++
+	===== CSS DEFAULT VARIABLES =====
+	+++++++++++++++++++++++++++++++++
+*/
+
+:root {
+	--margin: 0.5em;
+	--padding: 0.5em;
+	--border-radius: 1.2em;
+}
+
+/* 
+	++++++++++++++++++++++++++++++
+	===== CSS DEFAULT STYLES =====
+	++++++++++++++++++++++++++++++
+*/
+
+a {
+	color: rgb(var(--primary-color)) !important;
+	cursor: pointer;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: rgb(var(--bg-body));
+	scroll-behavior: smooth;
+}
+
+.separator {
+	width: 60%;
+	background-color: rgba(var(--separator-color), 0.3);
+	padding: 0.05em;
+	border: none;
+	border-radius: 50%;
+	margin: auto;
+}
+
+/* 
+	+++++++++++++++++++++++++++++
+	===== CSS FONT SETTINGS =====
+	+++++++++++++++++++++++++++++
+*/
+
+:root {
+	--fs-h1: 2.6em;
+	--fs-h2: 2.3em;
+	--fs-h3: 2em;
+	--fs-h4: 1.7em;
+	--fs-h5: 1.4em;
+	--fs-h6: 1.1em;
+	--fs-body: 1.1em;
+}
+
+.h1 {
+	font-size: var(--fs-h1);
+	font-weight: 900;
+	color: rgb(var(--color));
+}
+
+.h2 {
+	font-size: var(--fs-h2);
+	font-weight: 800;
+	color: rgb(var(--color));
+}
+
+.h3 {
+	font-size: var(--fs-h3);
+	font-weight: 700;
+	color: rgb(var(--color));
+}
+
+.h4 {
+	font-size: var(--fs-h4);
+	font-weight: 600;
+	color: rgb(var(--color));
+}
+
+.h5 {
+	font-size: var(--fs-h5);
+	font-weight: 500;
+	color: rgb(var(--color));
+}
+
+.h6 {
+	font-size: var(--fs-h6);
+	font-weight: 400;
+	color: rgb(var(--color));
+}
+
+.fs-body {
+	font-size: var(--fs-body);
+	font-weight: 500;
+	color: rgb(var(--color));
+}
