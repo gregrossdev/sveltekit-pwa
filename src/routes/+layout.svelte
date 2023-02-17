@@ -3,13 +3,11 @@
 	import { onMount } from 'svelte';
 	// @ts-ignore
 	import { pwaInfo } from 'virtual:pwa-info';
-	import LoadingPage from '$lib/Loading_page.svelte';
 
 	/**
 	 * @type {typeof import("$lib/ReloadPrompt.svelte").default}
 	 */
 	let ReloadPrompt;
-	let loading_page = true;
 
 	onMount(async () => {
 		if (pwaInfo) {
@@ -21,11 +19,6 @@
 				 * @param {any} r
 				 */
 				onRegistered(r) {
-					// uncomment following code if you want check for updates
-					// r && setInterval(() => {
-					//    console.log('Checking for sw update')
-					//    r.update()
-					// }, 20000 /* 20s for testing purposes */)
 					console.log(`SW Registered: ${r}`);
 				},
 				/**
@@ -36,7 +29,6 @@
 				}
 			});
 		}
-		loading_page = false;
 	});
 
 	onMount(async () => {
@@ -50,13 +42,16 @@
 	{@html webManifest}
 </svelte:head>
 
+<div class="container mx-auto max-w-prose p-4 font-comic">
+	<nav class="rounded-lg mb-4">
+		<a class="normal-case text-xl pr-4" href="/">Home</a>
+	</nav>
+
+	<main class="bg-primary-content">
+		<slot />
+	</main>
+</div>
+
 {#if ReloadPrompt}
 	<svelte:component this={ReloadPrompt} />
-{/if}
-
-{#if loading_page}
-	<LoadingPage />
-{/if}
-{#if !loading_page}
-	<slot />
 {/if}

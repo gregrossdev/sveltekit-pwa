@@ -1,4 +1,15 @@
-// since there's no dynamic data here, we can prerender
-// it so that it gets served as a static asset in production
-export const prerender = true;
+import { today } from '$lib/today.js'; 
 
+export const load = async ({fetch}) => {
+
+    const fetchDates = async () => {
+        const response = await fetch(`https://jimmy-smith.gregross.host/api/dates/2023-${today}`)
+        const api = await response.json()
+        const data = api.data;
+        return data;
+    }
+
+    return {
+        api: fetchDates(),
+    }
+}
